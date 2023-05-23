@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    Catalogs List
+{% endblock %}
+
+{% block body %}
+    <h1>Catalogs List</h1>
+    {% if catalogs is defined and catalogs|length %}
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Title</th>
+                <th>Artist</th>
+                <th>Genre</th>
+                <th>Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for catalog in catalogs %}
+                <tr>
+                    <td>{{ catalog.id }}</td>
+                    <td>{{ catalog.title }}</td>
+                    <td>{{ catalog.artist }}</td>
+                    <td>{{ catalog.genre }}</td>
+                    <td>
+                        <a href="{{ path('catalogs_show', {'id': catalog.id}) }}" title="View">
+                            View
+                        </a>
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <p>No catalogs found.</p>
+    {% endif %}
+{% endblock %}

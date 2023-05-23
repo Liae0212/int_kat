@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    Catalog Details - ID: {{ catalog.id }}
+{% endblock %}
+
+{% block body %}
+    <h1>Catalog Details - ID: {{ catalog.id }}</h1>
+    <dl>
+        <dt>ID:</dt>
+        <dd>{{ catalog.id }}</dd>
+        <dt>Title:</dt>
+        <dd>{{ catalog.title }}</dd>
+        <dt>Artist:</dt>
+        <dd>{{ catalog.artist }}</dd>
+        <dt>Genre:</dt>
+        <dd>{{ catalog.genre }}</dd>
+    </dl>
+    <p>
+        <a href="{{ path('catalogs_index') }}" title="Back to List">
+            Back to List
+        </a>
+    </p>
+{% endblock %}
+- ID: {{ catalog.id }}</h
